@@ -12,6 +12,10 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build
+      - run: ls -la
+      - run: ls -la .output || echo "no .output folder"
+      - run: ls -la client || echo "no client folder"
+      - run: ls -la dist || echo "no dist folder"
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
